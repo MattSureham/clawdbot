@@ -1,5 +1,7 @@
 import { createRequire } from "node:module";
 
+import { handleFeishuAction } from "../../agents/tools/feishu-actions.js";
+
 import {
   chunkByNewline,
   chunkMarkdownText,
@@ -281,6 +283,9 @@ export function createPluginRuntime(): PluginRuntime {
         sendMessageSlack,
         monitorSlackProvider,
         handleSlackAction,
+      },
+      feishu: {
+        handleFeishuAction,
       },
       telegram: {
         auditGroupMembership: auditTelegramGroupMembership,
